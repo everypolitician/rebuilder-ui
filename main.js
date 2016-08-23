@@ -4,7 +4,7 @@ $.get('https://rawgit.com/everypolitician/everypolitician-data/master/countries.
     country.legislatures.forEach(function (legislature) {
       html.push(`
         <div style="border: 1px solid #555; padding: 1em; margin-bottom: 0.5em;">
-          <p>${country.name} - ${legislature.name}</p>
+          <p>${country.name} - ${legislature.name} <small>Last updated: ${new Date(legislature.lastmod * 1000)}</small></p>
           <form action="https://everypolitician-rebuilder.herokuapp.com/" method="post">
             <input type="hidden" name="country" value="${country.slug}">
             <input type="hidden" name="legislature" value="${legislature.slug}">
